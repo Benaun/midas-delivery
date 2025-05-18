@@ -1,9 +1,8 @@
 import { Outlet, createBrowserRouter } from 'react-router-dom'
 
-import { Footer } from '@/features/footer'
-import { Header } from '@/features/header'
-
 import { ROUTES } from '@/shared/model/routes'
+import { Footer } from '@/shared/ui/footer'
+import { Header } from '@/shared/ui/header'
 
 import App from './app'
 import {
