@@ -1,7 +1,9 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
 import { z } from 'zod'
 
+import { ROUTES } from '@/shared/model/routes'
 import { Button } from '@/shared/ui/kit/button'
 import {
   Form,
@@ -47,7 +49,9 @@ export function LoginForm() {
           name='phone'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Телефон</FormLabel>
+              <FormLabel className='font-semibold'>
+                Телефон
+              </FormLabel>
               <FormControl>
                 <Input placeholder='+79997772233' {...field} />
               </FormControl>
@@ -74,13 +78,26 @@ export function LoginForm() {
         />
 
         {loginErrorMessage && (
-          <p className='text-destructive text-sm'>
+          <p className='text-red-500 text-sm'>
             {loginErrorMessage}
           </p>
         )}
-        <Button disabled={isLoginPending} type='submit'>
-          Войти
-        </Button>
+        <div className='w-full flex justify-between'>
+          <Button
+            className='bg-black text-white w-4/9'
+            disabled={isLoginPending}
+            type='submit'
+          >
+            Войти
+          </Button>
+          <Button
+            className='bg-black text-white w-4/9'
+            disabled={isLoginPending}
+            type='submit'
+          >
+            <Link to={ROUTES.HOME}>Назад</Link>
+          </Button>
+        </div>
       </form>
     </Form>
   )

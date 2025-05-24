@@ -20,14 +20,16 @@ export function AuthLayout({
 }) {
   return (
     <main className='grow flex flex-col pt-[200px] items-center'>
-      <Card className='w-full max-w-[400px]'>
-        <CardHeader>
-          <CardTitle>{title}</CardTitle>
+      <Card className='w-full max-w-[400px] gap-6 rounded-xl border py-6 shadow-sm'>
+        <CardHeader className='gap-1.5 px-6 [.border-b]:pb-6'>
+          <CardTitle className='font-semibold'>
+            {title}
+          </CardTitle>
           <CardDescription>{description}</CardDescription>
         </CardHeader>
-        <CardContent>{form}</CardContent>
-        <CardFooter>
-          <p className='text-sm text-muted-foreground [&_a]:underline [&_a]:text-green-400 [&_a]:pl-2'>
+        <CardContent className='px-6'>{form}</CardContent>
+        <CardFooter className='items-center px-6 [.border-t]:pt-6'>
+          <p className='text-sm text-gray-400 [&_a]:underline [&_a]:text-green-400 [&_a]:pl-2'>
             {footerText}
           </p>
         </CardFooter>

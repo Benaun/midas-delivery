@@ -2,8 +2,8 @@ import { Button } from '@/shared/ui/kit/button'
 
 export function Hero() {
   return (
-    <section className='mx-[18px] flex flex-end relative text-white'>
-      <div className='flex flex-col text-[25px] mt-24'>
+    <section className='flex flex-end relative overflow-hidden'>
+      <div className='flex flex-col text-[25px] mt-24 ml-[18px]'>
         <p className='w-[312px] font-medium mb-7'>
           Доставка готовой еды <br /> из фермерских <br />{' '}
           продуктов!
@@ -11,7 +11,7 @@ export function Hero() {
         <img
           src='/images/home/dots-sheet.svg'
           alt='dots'
-          className='w-[184px] h-[184px] mb-7 relative -left-20'
+          className='w-[184px] h-[184px] mb-7 relative -left-20 overflow-hidden'
         />
         <p className='font-medium mb-2'>+7 (499) 841-67-29</p>
         <p className='font-medium text-[18px]'>

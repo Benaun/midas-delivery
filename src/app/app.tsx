@@ -5,11 +5,13 @@ function App() {
   const className =
     location.pathname === '/login' ||
     location.pathname === '/register'
-      ? 'mx-auto w-full'
-      : 'mx-auto w-full bg-gradient-to-br from-blue-600 to-black'
+      ? 'container mx-auto w-full font-main'
+      : 'w-full bg-gradient-to-br from-blue-600 to-black font-main'
   return (
     <div className={className}>
-      <Outlet />
+      <div className='container mx-auto'>
+        <Outlet />
+      </div>
     </div>
   )
 }

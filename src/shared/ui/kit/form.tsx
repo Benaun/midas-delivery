@@ -103,7 +103,7 @@ function FormLabel({
       data-slot='form-label'
       data-error={!!error}
       className={cn(
-        'data-[error=true]:text-destructive',
+        'data-[error=true]:text-destructive font-semibold',
         className
       )}
       htmlFor={formItemId}
@@ -166,7 +166,7 @@ function FormMessage({
     <p
       data-slot='form-message'
       id={formMessageId}
-      className={cn('text-destructive text-sm', className)}
+      className={cn('text-red-500 text-sm', className)}
       {...props}
     >
       {body}
@@ -175,7 +175,6 @@ function FormMessage({
 }
 
 export {
-  useFormField,
   Form,
   FormItem,
   FormLabel,

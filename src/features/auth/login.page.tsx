@@ -14,10 +14,7 @@ function LoginPage() {
       footerText={
         <>
           Хотите создать аккаунт?
-          <Link
-            to={ROUTES.REGISTER}
-            className=' underline text-primary'
-          >
+          <Link to={ROUTES.REGISTER} className='underline'>
             Зарегистрироваться
           </Link>
         </>

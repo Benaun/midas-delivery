@@ -1,7 +1,9 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
 import { z } from 'zod'
 
+import { ROUTES } from '@/shared/model/routes'
 import { Button } from '@/shared/ui/kit/button'
 import {
   Form,
@@ -92,13 +94,26 @@ export function RegisterForm() {
           )}
         />
         {registerErrorMessage && (
-          <p className='text-destructive text-sm'>
+          <p className='text-red-500 text-sm'>
             {registerErrorMessage}
           </p>
         )}
-        <Button disabled={registerPending} type='submit'>
-          Зарегистрироваться
-        </Button>
+        <div className='w-full flex justify-between'>
+          <Button
+            disabled={registerPending}
+            type='submit'
+            className='bg-black text-white w-5/9'
+          >
+            Зарегистрироваться
+          </Button>
+          <Button
+            disabled={registerPending}
+            type='submit'
+            className='bg-black text-white w-3/9'
+          >
+            <Link to={ROUTES.HOME}>Отменить</Link>
+          </Button>
+        </div>
       </form>
     </Form>
   )

@@ -1,9 +1,11 @@
 import { Hero } from './hero'
+import { Popular } from './popular'
 
 function Home() {
   return (
-    <main className='container mx-auto'>
+    <main className='mx-auto text-white'>
       <Hero />
+      <Popular />
     </main>
   )
 }
