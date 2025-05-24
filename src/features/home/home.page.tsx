@@ -1,4 +1,5 @@
 import { Hero } from './hero'
+import { MenuSlider } from './menu-slider'
 import { Popular } from './popular'
 
 function Home() {
@@ -6,6 +7,7 @@ function Home() {
     <main className='mx-auto text-white'>
       <Hero />
       <Popular />
+      <MenuSlider />
     </main>
   )
 }
