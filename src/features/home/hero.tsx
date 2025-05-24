@@ -44,7 +44,7 @@ export function Hero() {
               <p className='text-[23px] font-extrabold'>
                 1 200 P
               </p>
-              <Button className='bg-amber-400'>
+              <Button className='bg-amber-400 hover:bg-amber-600 cursor-pointer'>
                 <img src='/images/icons/cart.svg' alt='cart' />
               </Button>
             </div>
