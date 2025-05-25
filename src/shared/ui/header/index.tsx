@@ -1,12 +1,18 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { ROUTES } from '@/shared/model/routes'
 import { useSession } from '@/shared/model/session'
 
-import { navItems } from './data'
+import { Button } from '../kit/button'
+
+import { BurgerMenu } from './burger-menu'
+import { HeaderNav } from './header-nav'
 
 export function Header() {
   const { session, logout } = useSession()
+  const [menuIsVisible, setMenuIsVisible] =
+    useState<boolean>(false)
   return (
     <header className='container mx-auto pt-[50px] pb-[44px]'>
       <div className='flex items-center justify-between mx-[18px]'>
@@ -18,39 +24,27 @@ export function Header() {
           />
         </Link>
 
-        <nav className='flex gap-11'>
-          {navItems.map(navItem => (
-            <div key={navItem.title} className='flex'>
-              <Link
-                to={navItem.link}
-                className='flex gap-1 text-lg items-center justify-center text-white hover:text-gray-400'
-              >
-                <p>{navItem.title.toUpperCase()}</p>
-                {navItem.img ? (
-                  <img
-                    src={navItem.img}
-                    className='w-[16px] h-[16px]'
-                  />
-                ) : (
-                  <div></div>
-                )}
-              </Link>
-            </div>
-          ))}
-        </nav>
+        <HeaderNav className='hidden xl:flex' />
+
+        <BurgerMenu
+          className='flex xl:hidden'
+          onClick={() => setMenuIsVisible(prev => !prev)}
+          isMenuVisible={menuIsVisible}
+          setMenuIsVisible={setMenuIsVisible}
+        />
 
         <div className='flex gap-10 text-white'>
-          <button
+          <Button
             className='border-0 cursor-pointer'
             onClick={() => undefined}
           >
             {
               <img
                 src='/images/icons/search.svg'
-                className='w-[24px] h-[24px]'
+                className='2xl:w-[24px] lg:w-[20px] 2xl:h-[24px] lg:h-[20px]'
               />
             }
-          </button>
+          </Button>
           {session ? (
             <>
               <button className='border-0 cursor-pointer'>
@@ -58,20 +52,20 @@ export function Header() {
                   {
                     <img
                       src='/images/icons/cart.svg'
-                      className='w-[24px] h-[24px]'
+                      className='2xl:w-[24px] lg:w-[20px] 2xl:h-[24px] lg:h-[20px]'
                     />
                   }
                 </Link>
               </button>
               <button
                 onClick={() => logout()}
-                className='hover:text-gray-400 text-2xl cursor-pointer'
+                className='hover:text-gray-400 2xl:text-[14px] lg:text-[12px] cursor-pointer'
               >
                 Выйти
               </button>
             </>
           ) : (
-            <button className='hover:text-gray-400 text-2xl cursor-pointer'>
+            <button className='hover:text-gray-400 2xl:text-[14px] lg:text-[12px] cursor-pointer'>
               <Link to={ROUTES.LOGIN}>Войти</Link>
             </button>
           )}

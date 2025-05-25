@@ -34,11 +34,11 @@ export function MenuSlider() {
             }}
             className='w-full overflow-visible relative'
           >
-            <h1 className='font-medium text-[80px] text-center mb-16'>
+            <h1 className='font-medium text-[50px] lg:text-[80px] text-center mb-16'>
               Меню
             </h1>
-            <CarouselPrevious className='absolute top-10 right-25 w-[56px] h-[56px]' />
-            <CarouselNext className='absolute top-10 right-0 w-[56px] h-[56px]' />
+            <CarouselPrevious className='absolute top-4 lg:right-30 right-25 w-[56px] h-[56px]' />
+            <CarouselNext className='absolute top-4 lg:right-10 md:right-8 right-0 w-[56px] h-[56px]' />
             <CarouselContent
               className='ml-0 flex gap-[20px]'
               style={{ width: containerWidth }}
@@ -72,7 +72,10 @@ export function MenuSlider() {
                   className='basis-[233px]'
                 >
                   <Card
-                    className={`w-[233px] h-[314px] bg-[url(${menuSliderItem.image})] bg-cover hover:underline hover:opacity-50 cursor-pointer`}
+                    className={`w-[233px] h-[314px] bg-cover hover:underline hover:opacity-50 cursor-pointer`}
+                    style={{
+                      backgroundImage: `url(${menuSliderItem.image})`
+                    }}
                   >
                     <div className='w-full h-full'>
                       <CardContent className='w-full h-full flex items-center justify-center'>

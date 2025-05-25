@@ -12,9 +12,9 @@ import { popularProducts } from './products-data'
 
 export function Popular() {
   return (
-    <section className='container mx-[18px] w-full mb-36'>
+    <section className='container mx-[18px] w-full mb-18 xl:mb-36'>
       <div className='flex flex-col gap-[37px]'>
-        <h1 className='font-medium text-[80px] text-center'>
+        <h1 className='font-medium text-[50px] xl:text-[80px] text-center'>
           Популярные блюда
         </h1>
         <div className='flex flex-wrap gap-[20px]'>
