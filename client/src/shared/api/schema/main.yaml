@@ -1,0 +1,29 @@
+openapi: 3.0.0
+info:
+  title: Midas Delivery
+  description: API for Midas Delivery
+  version: 1.0.0
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+paths:
+  /auth/login:
+    post:
+      $ref: './endpoints/auth.yaml#/login'
+
+  /auth/register:
+    post:
+      $ref: './endpoints/auth.yaml#/register'
+
+  /auth/refresh:
+    post:
+      $ref: './endpoints/auth.yaml#/refresh'
+
+  /products:
+    get:
+      $ref: './endpoints/products.yaml#/getAllProducts'
