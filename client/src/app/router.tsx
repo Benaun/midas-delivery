@@ -1,6 +1,7 @@
 import { Outlet, createBrowserRouter } from 'react-router-dom'
 
 import { ROUTES } from '@/shared/model/routes'
+import { Breadcrumbs } from '@/shared/ui/breadcrumbs'
 import { Footer } from '@/shared/ui/footer'
 import { Header } from '@/shared/ui/header'
 
@@ -49,15 +50,12 @@ export const router = createBrowserRouter([
         element: (
           <>
             <Header />
+            <Breadcrumbs />
             <Outlet />
             <Footer />
           </>
         ),
         children: [
-          {
-            path: ROUTES.HOME,
-            lazy: () => import('@/features/home/home.page')
-          },
           {
             path: ROUTES.PROMO,
             lazy: () => import('@/features/promo/promo.page')
@@ -83,6 +81,21 @@ export const router = createBrowserRouter([
           {
             path: ROUTES.DRINKS,
             lazy: () => import('@/features/drinks/drinks.page')
+          }
+        ]
+      },
+      {
+        element: (
+          <>
+            <Header />
+            <Outlet />
+            <Footer />
+          </>
+        ),
+        children: [
+          {
+            path: ROUTES.HOME,
+            lazy: () => import('@/features/home/home.page')
           }
         ]
       },
