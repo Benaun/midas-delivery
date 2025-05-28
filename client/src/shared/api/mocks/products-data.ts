@@ -5,6 +5,8 @@ interface IProduct {
   weight: string
   description: string
   price: number
+  isPromo: boolean
+  category: 'hot' | 'cold' | 'drink' | 'bakery' | 'deserts'
 }
 
 export const popularProducts: IProduct[] = [
@@ -15,7 +17,9 @@ export const popularProducts: IProduct[] = [
     weight: '430',
     description:
       'Хачапури "Лодочка" с начинкой из расплавленного сыра сулугуни, яйца и масла.',
-    price: 470
+    price: 470,
+    isPromo: false,
+    category: 'hot'
   },
   {
     id: '2',
@@ -24,7 +28,9 @@ export const popularProducts: IProduct[] = [
     weight: '350',
     description:
       'Пряные хинкали с начинкой из ароматной баранины со специями.',
-    price: 495
+    price: 495,
+    isPromo: false,
+    category: 'hot'
   },
   {
     id: '3',
@@ -33,7 +39,9 @@ export const popularProducts: IProduct[] = [
     weight: '430',
     description:
       'Пряные хинкали с начинкой из ароматной баранины со специями.',
-    price: 520
+    price: 520,
+    isPromo: false,
+    category: 'hot'
   },
   {
     id: '4',
@@ -42,7 +50,9 @@ export const popularProducts: IProduct[] = [
     weight: '450',
     description:
       'Греческий йогурт с ягодами, 3 хинкали традиционных, салат цезарь, пирожки с уткой, морс',
-    price: 1148
+    price: 1148,
+    isPromo: false,
+    category: 'cold'
   },
   {
     id: '5',
@@ -51,7 +61,9 @@ export const popularProducts: IProduct[] = [
     weight: '430',
     description:
       'Невероятно ароматная лепёшка с сыром сулугуни внутри и снаружи',
-    price: 490
+    price: 490,
+    isPromo: false,
+    category: 'hot'
   },
   {
     id: '6',
@@ -60,7 +72,9 @@ export const popularProducts: IProduct[] = [
     weight: '430',
     description:
       'По семейному рецепту: нежнейшее рубленное мясо с экологически чистыми ферме... По-семейному рецепту: нежнейшее рубленное мясо с экологически чистыми ферме...',
-    price: 350
+    price: 350,
+    isPromo: false,
+    category: 'hot'
   },
   {
     id: '7',
@@ -69,7 +83,9 @@ export const popularProducts: IProduct[] = [
     weight: '350',
     description:
       'Пряные хинкали с начинкой из ароматной баранины со специями.',
-    price: 495
+    price: 495,
+    isPromo: false,
+    category: 'hot'
   },
   {
     id: '8',
@@ -78,7 +94,9 @@ export const popularProducts: IProduct[] = [
     weight: '430',
     description:
       'Невероятно ароматная лепёшка с сыром сулугуни внутри и снаружи',
-    price: 490
+    price: 490,
+    isPromo: false,
+    category: 'hot'
   },
   {
     id: '9',
@@ -87,7 +105,9 @@ export const popularProducts: IProduct[] = [
     weight: '430',
     description:
       'Хачапури "Лодочка" с начинкой из расплавленного сыра сулугуни, яйца и масла.',
-    price: 470
+    price: 470,
+    isPromo: false,
+    category: 'hot'
   },
   {
     id: '10',
@@ -96,7 +116,9 @@ export const popularProducts: IProduct[] = [
     weight: '430',
     description:
       'По семейному рецепту: нежнейшее рубленное мясо с экологически чистыми ферме... По-семейному рецепту: нежнейшее рубленное мясо с экологически чистыми ферме...',
-    price: 350
+    price: 350,
+    isPromo: false,
+    category: 'hot'
   },
   {
     id: '11',
@@ -105,7 +127,9 @@ export const popularProducts: IProduct[] = [
     weight: '430',
     description:
       'Пряные хинкали с начинкой из ароматной баранины со специями.',
-    price: 520
+    price: 520,
+    isPromo: false,
+    category: 'hot'
   },
   {
     id: '12',
@@ -114,6 +138,8 @@ export const popularProducts: IProduct[] = [
     weight: '450',
     description:
       'Греческий йогурт с ягодами, 3 хинкали традиционных, салат цезарь, пирожки с уткой, морс',
-    price: 1148
+    price: 1148,
+    isPromo: false,
+    category: 'cold'
   }
 ]

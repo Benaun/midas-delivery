@@ -8,7 +8,7 @@ import {
   CardTitle
 } from '@/shared/ui/kit/card'
 
-import { popularProducts } from './products-data'
+import { popularProducts } from '../../shared/api/mocks/products-data'
 
 export function Popular() {
   return (
