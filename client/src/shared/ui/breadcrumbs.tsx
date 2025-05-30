@@ -6,7 +6,7 @@ const routes = [
   { path: '/cart', label: 'Корзина' },
   { path: '/review-form', label: 'Форма отзыва' },
   { path: '/promo', label: 'Промо' },
-  { path: '/hot-food', label: 'Горячая еда' },
+  { path: '/hot-food', label: 'Горячие блюда' },
   { path: '/cold-food', label: 'Холодная еда' },
   { path: '/bakery', label: 'Выпечка' },
   { path: '/deserts', label: 'Десерты' },
@@ -20,24 +20,31 @@ export function Breadcrumbs() {
     location.pathname.startsWith(route.path)
   )
 
+  const locationName = breadcrumbs[breadcrumbs.length - 1]
+
   if (breadcrumbs.length === 0) return null
 
   return (
-    <ul className='flex p-0 list-none text-white font-medium text-sm px-[18px]'>
-      {breadcrumbs.map((item, index) => (
-        <li key={item.path}>
-          {location.pathname === item.path ? (
-            <span className='text-gray-400 cursor-default'>
-              {item.label}
-            </span>
-          ) : (
-            <Link to={item.path}>{item.label}</Link>
-          )}
-          {index < breadcrumbs.length - 1 && (
-            <span className='px-3'> / </span>
-          )}
-        </li>
-      ))}
-    </ul>
+    <div className='text-white font-medium px-[18px]'>
+      <h1 className='text-[80px] mb-1.5'>
+        {locationName.label}
+      </h1>
+      <ul className='flex p-0 list-none text-sm'>
+        {breadcrumbs.map((item, index) => (
+          <li key={item.path}>
+            {location.pathname === item.path ? (
+              <span className='text-gray-400 cursor-default'>
+                {item.label}
+              </span>
+            ) : (
+              <Link to={item.path}>{item.label}</Link>
+            )}
+            {index < breadcrumbs.length - 1 && (
+              <span className='px-3'> / </span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
