@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
+import { FieldValues, Path, useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 
 import { AuthFormProps } from '@/shared/model/types'
@@ -14,7 +14,7 @@ import {
 } from '@/shared/ui/kit/form'
 import { Input } from '@/shared/ui/kit/input'
 
-export const AuthForm = ({
+export const AuthForm = <T extends FieldValues>({
   fields,
   schema,
   onSubmit,
@@ -23,8 +23,8 @@ export const AuthForm = ({
   submitText,
   cancelText,
   cancelHref
-}: AuthFormProps) => {
-  const form = useForm({ resolver: zodResolver(schema) })
+}: AuthFormProps<T>) => {
+  const form = useForm<T>({ resolver: zodResolver(schema) })
   const handleSubmit = form.handleSubmit(onSubmit)
 
   return (
@@ -37,7 +37,7 @@ export const AuthForm = ({
           <FormField
             key={field.name}
             control={form.control}
-            name={field.name}
+            name={field.name as Path<T>}
             render={({ field: f }) => (
               <FormItem>
                 <FormLabel className='font-semibold'>
